@@ -70,8 +70,8 @@ class Bot:
 
         # 나머지가 0일 경우 한 바퀴 다 돌았음을 의미함으로 다한 사람 filter할 필요 없음
         if rotation_done_yn:
-            start_num = rotation_num * self.total_members
-            end_num = ((rotation_num + 1) * self.total_members) - 1
+            start_num = rotation_num * self.total_members + 1
+            end_num = ((rotation_num + 1) * self.total_members) 
             dones = [i[0] for i in self.__db.get_dones(start_num, end_num)]
             print('발표한 사람: {0}'.format(dones))
             candidates = list(filter(lambda x: x not in dones, candidates))
