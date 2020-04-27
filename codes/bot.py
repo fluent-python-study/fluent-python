@@ -94,7 +94,9 @@ class Bot:
                 next_presentor = self.__get_random()
                 print('get next presentor')
                 msg = '다음 발제자는 "{0}"입니다!!!>_<'.format(next_presentor)
-            self._send(ch, msg)
+                self._send(ch, msg)
+            elif msg == '!번개' or msg == '번개!':
+                self._slacker.files.upload(file_='../images/thunder.jpg', title='번개', channels=ch)
 
     def _read(self):
         while True:
@@ -118,6 +120,8 @@ class Bot:
         text = event['text'].replace(self._bot_id, '').strip()
 
         if text.startswith('!발제자') or text.startswith('발제자!'):
+            text, target = text, ''
+        elif text.startswith('!번개') or text.startswith('번개!'):
             text, target = text, ''
 
         return event['channel'], text, target

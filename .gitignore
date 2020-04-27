@@ -150,4 +150,4 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/python,windows,visualstudiocode
 
 # ignore nay kind of config file
-**/*.config
+codes/bot_config.py
