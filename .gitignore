@@ -151,3 +151,4 @@ $RECYCLE.BIN/
 
 # ignore nay kind of config file
 codes/bot_config.py
+**/*.class
